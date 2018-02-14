@@ -16,8 +16,6 @@ services:
       - bundle:/usr/local/bundle
     links:
       - db
-    depends_on:
-      - redis
     # Keep the stdin open, so we can attach to our app container's process and do things such as
     # byebug, etc:
     stdin_open: true
@@ -41,12 +39,3 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: development_database
-  redis:
-    image: redis:4.0.8-alpine
-    command: ["redis-server", "--appendonly", "yes"]
-    hostname: redis
-    networks:
-      - redis-net
-    volumes:
-      - redis-data:/data
-
