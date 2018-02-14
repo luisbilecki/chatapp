@@ -1,0 +1,8 @@
+<h1><%= t('app.title') %></h1>
+
+<p class="lead"><%= link_to t('buttons.new', item: 'chat room'),
+                    new_chat_room_path, class: 'btn btn-primary' %></p>
+
+<ul>
+  <%= render @chat_rooms %>
+</ul>

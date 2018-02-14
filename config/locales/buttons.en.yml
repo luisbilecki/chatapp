@@ -1,0 +1,5 @@
+en:
+  buttons:
+    new: "New %{item}"
+    enter: "New %{item}"
+    add: 'Add!'

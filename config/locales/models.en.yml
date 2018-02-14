@@ -1,0 +1,10 @@
+en:
+  activerecord:
+    models:
+      chat_room:
+        one: Chat room
+        other: Chat rooms
+    attributes:
+      chat_room:
+        title: Title
+        user: User

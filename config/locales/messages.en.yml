@@ -1,0 +1,4 @@
+en:
+  messages:
+    added: "%{item} added!"
+    add: "Add %{item}"
