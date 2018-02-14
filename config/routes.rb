@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # Chatrooms controller
   resources :chat_rooms, only: [:new, :create, :show, :index]
 
+  # Action cable
+  mount ActionCable.server => '/cable'
+
   # Default route
   root 'chat_rooms#index'
 

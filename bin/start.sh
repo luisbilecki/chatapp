@@ -1,5 +1,7 @@
 #!/bin/bash
 
+luis/redis /usr/bin/redis-server
+
 bundle check || bundle install
 
 if [ -f tmp/pids/server.pid ]; then
