@@ -3,6 +3,11 @@ class ChatroomsController < ApplicationController
     @chat_rooms = ChatRoom.all
   end
 
+  def show
+    # Includes method is used to eager loading
+    @chat_room = ChatRoom.includes(:messages).find_by(id: params[:id])
+  end
+
   def new
     @chat_room = ChatRoom.new
   end
