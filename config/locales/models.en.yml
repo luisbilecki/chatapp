@@ -4,7 +4,14 @@ en:
       chat_room:
         one: Chat room
         other: Chat rooms
+      message:
+        one: Message
+        other: Messages
     attributes:
       chat_room:
         title: Title
+        user: User
+      message:
+        body: Type a text
+        chat_room: Chat Room
         user: User

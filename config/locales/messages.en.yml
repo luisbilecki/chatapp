@@ -2,4 +2,4 @@ en:
   messages:
     added: "%{item} added!"
     add: "Add %{item}"
-    new_message: "%{name} at %{time} says "
+    new_message: "%{name} at %{time} says: "

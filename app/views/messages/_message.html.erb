@@ -7,7 +7,7 @@
       <div class="col-md-11">
         <p class="card-text">
           <span class="text-muted">
-            <%= t('messages.new_message'), name: message.user.nick_name, time: message.get_time) %>
+            <%= t('messages.new_message', name: message.user.nick_name, time: message.get_time) %>
           </span><br>
           <%= message.body %>
         </p>

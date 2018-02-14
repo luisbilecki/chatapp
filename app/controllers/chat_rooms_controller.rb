@@ -1,4 +1,4 @@
-class ChatroomsController < ApplicationController
+class ChatRoomsController < ApplicationController
   def index
     @chat_rooms = ChatRoom.all
   end
@@ -18,7 +18,7 @@ class ChatroomsController < ApplicationController
     @chat_room = current_user.chat_rooms.build(chat_room_params)
 
     if @chat_room.save
-      flash[:success] = t('messages.added', item: "Chat Room")
+      flash[:success] = t('messages.added', item: 'Chat Room')
       redirect_to chat_rooms_path
     else
       render :new

@@ -16,6 +16,8 @@ jQuery(document).on 'turbolinks:load', ->
         # Called when the subscription has been terminated by the server
 
       received: (data) ->
+        console.log "Received data"
+        console.log data
         messages.append data['message']
         messages_to_bottom()
 
