@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require bootbox
+//= require bootstrap-notify
 //= require turbolinks
 //= require cable
 //= require_tree .

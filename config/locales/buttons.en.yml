@@ -4,7 +4,7 @@ en:
     enter: "New %{item}"
     add: 'Add!'
     post: 'Post'
-    actions: 'Actions'
+    action: 'Actions'
     enterwo: 'Enter'
     destroy: 'Destroy'
 
