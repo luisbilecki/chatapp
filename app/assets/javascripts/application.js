@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require bootbox
-//= require bootstrap-notify
 //= require turbolinks
 //= require cable
 //= require_tree .
@@ -53,3 +52,9 @@ $.rails.allowAction = function(element) {
 
   return false;
 }
+
+$(document).on('turbolinks:load', function(){
+      $(".alert").delay(2000).slideUp(500, function(){
+            $(".alert").alert('close');
+        });
+      });

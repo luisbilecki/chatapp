@@ -7,4 +7,6 @@ en:
     action: 'Actions'
     enterwo: 'Enter'
     destroy: 'Destroy'
+    login: 'Login'
+    signup: 'Sign up'
 

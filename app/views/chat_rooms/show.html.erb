@@ -1,16 +1,33 @@
-<h1><%= @chat_room.title %></h1>
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= @chat_room.title %></div>
+      <div class="panel-body">
+        <div class="message-wrap">
+          <!-- each message -->
+          <div class="msg-wrap">
+            <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
+              <%= render @chat_room.messages %>
+            </div>
+          </div>
 
-<div id="messages" data-chat-room-id="<%= @chat_room.id %>">
-  <%= render @chat_room.messages %>
-</div>
+          <%= form_for @message, url: '' do |f| %>
+            <%= hidden_field_tag 'chat_room_id', @chat_room.id %>
+            <div class="send-wrap form-group">
+              <%= f.label :body %>
+              <%= f.text_area :body, class: 'form-control send-message', rows: '3',
+                                     placeholder: t('messages.typetext') %>
+              <small class="text-muted"><%= t('messages.max_char') %></small>
+            </div>
 
-<%= form_for @message, url: '' do |f| %>
-  <%= hidden_field_tag 'chat_room_id', @chat_room.id %>
-  <div class="form-group">
-    <%= f.label :body %>
-    <%= f.text_area :body, class: 'form-control' %>
-    <small class="text-muted"><%= t('messages.max_char') %></small>
+            <div class="btn-panel">
+              <%= f.submit t('buttons.post'), class: 'col-lg-2 text-right btn send-message-btn pull-right',
+              role: 'button' %>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
   </div>
-
-  <%= f.submit t('buttons.post'), class: 'btn btn-primary btn-lg' %>
-<% end %>
+</div>
