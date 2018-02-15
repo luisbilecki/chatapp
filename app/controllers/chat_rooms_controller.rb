@@ -27,6 +27,18 @@ class ChatRoomsController < ApplicationController
     end
   end
 
+  def destroy
+    @chat_room = ChatRoom.find(params[:id])
+
+    if current_user = @chat_room.user
+      if @chat_room.destroy
+        redirect_to chat_rooms_path, notice: t('messages.destroyed')
+      else
+        redirect_to chat_rooms_path, error: t('messages.ndestroyed')
+      end
+    end
+  end
+
   private
 
   def chat_room_params

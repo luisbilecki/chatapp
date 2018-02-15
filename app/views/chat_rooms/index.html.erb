@@ -1,10 +1,59 @@
 <h1><%= t('app.title') %></h1>
 
-<p class="lead">
-  <%= link_to t('buttons.new', item: 'chat room'),
-                    new_chat_room_path, class: 'btn btn-primary' %>
-</p>
+<% if @chat_rooms.nil? %>
 
-<ul>
-  <%= render @chat_rooms %>
-</ul>
+  <div class="jumbotron">
+    <h1><%= t('app.welcome') %></h1>
+    <p>
+      <%= t('messages.empty_chat_rooms') %>
+    </p>
+    <p class="lead">
+      <%= link_to t('buttons.new', item: 'chat room'),
+                      new_chat_room_path, class: 'btn btn-primary btn-lg',
+                      role: 'button' %>
+    </p>
+  </div>
+
+<% else %>
+
+  <p class="lead">
+    <%= link_to t('buttons.new', item: 'chat room'),
+                      new_chat_room_path, class: 'btn btn-primary' %>
+  </p>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th class="col-md-7"> <%= ChatRoom.human_attribute_name('title') %> </td>
+          <th class="col-md-3"> <%= ChatRoom.human_attribute_name('created_at') %> </td>
+          <th colspan="2">
+            <%= t('buttons.action') %>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <% @chat_rooms.each  do |c| %>
+          <tr>
+            <td> <%= c.title %> </td>
+            <td> <%= time_ago_in_words(c.created_at) %> </td>
+            <td align="center"> <%= link_to t('buttons.enterwo'), chat_room_path(c.id), class: 'btn btn-primary' %></td>
+
+            <% if current_user != c.user %>
+              <td  align="center">
+                <%= link_to t('buttons.destroy'), chat_room_path(c.id), method: :delete,
+               data: { confirm: t('messages.delete') }, class: 'btn btn-danger disabled' %>
+             </td>
+            <% else %>
+              <td align="center">
+                  <%= link_to t('buttons.destroy'), chat_room_path(c.id), method: :delete,
+                 data: { confirm: t('messages.delete') }, class: 'btn btn-danger' %>
+             </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
+

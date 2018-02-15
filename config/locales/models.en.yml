@@ -11,6 +11,8 @@ en:
       chat_room:
         title: Title
         user: User
+        created_at: Created at
+        updated_at: Updated at
       message:
         body: Type a text
         chat_room: Chat Room

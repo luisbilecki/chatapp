@@ -1,6 +1,10 @@
 en:
   messages:
     added: "%{item} added!"
+    destroyed: 'Your room has been deleted!'
+    ndestroyed: 'An error has occurred while deleting the room'
     add: "Add %{item}"
     new_message: "%{name} at %{time} says: "
     max_char: From 2 to 1000 characters
+    empty_chat_rooms: Ooops! There is not any chat rooms available.
+    delete: 'Are you sure?'

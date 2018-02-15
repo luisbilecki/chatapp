@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   # Chatrooms controller
-  resources :chat_rooms, only: [:new, :create, :show, :index]
+  resources :chat_rooms, except: [:update]
 
   # Action cable
   mount ActionCable.server => '/cable'

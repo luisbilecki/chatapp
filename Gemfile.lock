@@ -49,6 +49,7 @@ GEM
     bindex (0.5.0)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
+    bootbox-rails (0.5.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -195,7 +196,8 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bootstrap-sass (~> 3.3.5)
+  bootbox-rails (~> 0.4)
+  bootstrap-sass (~> 3.3.7)
   byebug
   coffee-rails (~> 4.2)
   devise

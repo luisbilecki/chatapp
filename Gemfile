@@ -38,7 +38,7 @@ gem 'devise'
 gem 'devise-i18n'
 
 # Bootstrap GEM
-gem 'bootstrap-sass', '~> 3.3.5'
+gem 'bootstrap-sass', '~> 3.3.7'
 
 # Rails i18n
 gem 'rails-i18n', '~> 5.1'
@@ -48,6 +48,9 @@ gem 'redis', '~> 3.2'
 
 # JQuery
 gem 'jquery-rails'
+
+# Bootbox
+gem 'bootbox-rails', '~>0.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
