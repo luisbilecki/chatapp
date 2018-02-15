@@ -7,6 +7,8 @@ class ChatRoomsController < ApplicationController
     # Includes method is used to eager loading
     @chat_room = ChatRoom.includes(:messages).find_by(id: params[:id])
     @message = Message.new
+
+    redirect_to chat_rooms_path if @chat_room.nil?
   end
 
   def new

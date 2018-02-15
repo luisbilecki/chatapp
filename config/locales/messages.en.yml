@@ -3,3 +3,4 @@ en:
     added: "%{item} added!"
     add: "Add %{item}"
     new_message: "%{name} at %{time} says: "
+    max_char: From 2 to 1000 characters

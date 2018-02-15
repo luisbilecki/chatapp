@@ -38,7 +38,7 @@ gem 'devise'
 gem 'devise-i18n'
 
 # Bootstrap GEM
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap-sass', '~> 3.3.5'
 
 # Rails i18n
 gem 'rails-i18n', '~> 5.1'

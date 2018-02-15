@@ -1,4 +1,8 @@
 en:
   app:
     title: Chat rooms
+    header: ChatApp in Rails!
+    chatroom: Chat rooms
+    signin: Sign in
+    signout: Sign out
 
