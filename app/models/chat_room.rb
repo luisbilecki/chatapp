@@ -3,4 +3,8 @@ class ChatRoom < ApplicationRecord
 
   # Associations
   has_many :messages, dependent: :destroy
+
+  # Validations
+  validates :title, presence: true
+
 end
