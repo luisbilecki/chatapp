@@ -4,7 +4,7 @@ RSpec.describe ChatRoomsController, type: :controller do
   let(:chat_room) { FactoryBot.create :chat_room }
   let(:chat_room_params) { attributes_for(:chat_room) }
 
-  describe 'as a Unauthorized User' do
+  describe 'as an Unauthorized User' do
     it 'GET #index' do
       get :index
 
