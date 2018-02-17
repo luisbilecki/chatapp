@@ -20,7 +20,7 @@ If you don't want install these softwares, you should install some dependencies:
 
 ## Usage
 
-Clone this repository: `https://github.com/luisbilecki/chatapp.git`.
+Clone this repository: `git clone https://github.com/luisbilecki/chatapp.git`.
 
 In the repository folder, run:
 
@@ -29,4 +29,4 @@ In the repository folder, run:
 * `docker-compose run --rm web rails db:migrate`;
 * `docker-compose run --rm web rspec`.
 
-If rspec finishes without errors, you're ready to start the app. Run `docker-compose up`  and access `http://localhost:3000`.
+If `rspec` finishes without errors, you're ready to start the app. Run `docker-compose up`  and access `http://localhost:3000`.
