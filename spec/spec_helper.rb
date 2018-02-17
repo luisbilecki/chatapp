@@ -14,11 +14,42 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'factory_bot_rails'
+require 'capybara/rspec'
+require 'capybara/poltergeist'
+
+Capybara.configure do |config|
+  config.javascript_driver = :poltergeist
+  config.default_driver = :poltergeist
+  config.ignore_hidden_elements = false
+end
+
+PHANTOMJS_OPTIONS = [
+  '--webdriver-logfile=/dev/null',
+  '--load-images=yes',
+  '--debug=no',
+  '--ignore-ssl-errors=yes',
+  '--ssl-protocol=TLSv1'
+]
+PHANTOMJS_URL_BLACKLIST = [
+  'youtube.com', # the youtube embed player doesn't support phantomjs
+  'ytimg.com'
+]
+
+# Capybara Chrome Headless
+Capybara.register_driver :poltergeist do |app|
+  Capybara::Poltergeist::Driver.new(app,
+                                    debug: false,
+                                    js_errors: true, # Use true if you are really careful about your site
+                                    phantomjs_logger: '/dev/null',
+                                    timeout: 60,
+                                    :phantomjs_options => PHANTOMJS_OPTIONS,
+                                    url_blacklist: PHANTOMJS_URL_BLACKLIST,
+                                    window_size: [1920,1080]
+                                   )
+end
 
 RSpec.configure do |config|
-  #config.order = "random"
-
-  #FactoryBot Lint
+  # FactoryBot Lint
   config.before(:suite) do
     FactoryBot.lint
   end

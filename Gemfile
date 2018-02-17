@@ -59,16 +59,23 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
-  # RSpec
-  gem 'chromedriver-helper'
-  gem 'factory_bot_rails', '~> 4.0'
+  # Fake data with faker gem
   gem 'faker'
+
+end
+
+group :test do
+  # RSpec, Capybara, FactoryBot, etc
+  gem 'database_cleaner'
+  gem 'rspec-rails', '~> 3.7'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'factory_bot_rails', '~> 4.0'
   gem 'json_matchers'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rspec-json_expectations'
   gem 'webmock'
-  gem 'rspec-rails', '~> 3.7'
 end
 
 group :development do
